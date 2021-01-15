@@ -1,0 +1,58 @@
+shimmy10
+204693352
+Shimon Balsam
+
+I discussed the exercise with: Lab support.
+
+=============================
+= README for ex4: hangman.py
+=============================
+
+===========================
+=  Description: =
+
+One program which defines and activates a/multiple game/s of Hangman, from
+beginning to end.
+
+The program includes multiple functions:
+1. update_word_pattern: recieves a word, a pattern and a letter.
+If the letter is in the word, returns an updated pattern including the letter.
+
+2. run_single_game: receives a list of words, chooses a random word
+out of the list and runs a game of Hangman, stage by stage.
+
+3. main: receives nothing,continuously runs new games, by player's request.
+
+4.count_in_word: an original function designed to shorten other functions,
+by receiving a letter and a word/string and returning a boolean value,
+defining if the letter exists in the string or not.
+
+5. filter_words_list: receives a list of words, a pattern
+and a list of wrong letters which were already guessed. The function then
+returns a new list only containing the words which dit the pattern and don't
+include any of the letters within the wrong guesses list.
+
+6. choose_letter: receives a list of words and a pattern and returns
+the letter which shows up the most in the list of words but doesn't exist in
+the pattern.
+
+Finaly, the program opens the Hangman window, calls upon the previous functions
+in order to play the game. Once the player decides to end the game the program
+will close the Hangman window.
+
+====================================================
+
+===================================
+= Special Comments =
+
+If I would want to play the game using Hebrew letters, I would have to change
+condition "if guess[1] not in string.ascii_lowercase", within the function
+run_single_game, to a new condition:
+"if guess[1] not in string.ascii_uppercase".
+Furthermore, within the choose_letter function, instead of the command
+range(len(string.ascii_lowercase)) I would just write range(24), and instead
+of the command string.ascii_lowercase.index(words[i][j]) I will just write:
+ord(words[i][j].
+
+======================
+
